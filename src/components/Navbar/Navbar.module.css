@@ -1,9 +1,28 @@
 
 
 
-.containerNavbar{
-    display: flex;
-    justify-content: space-between;
-    background-color: bisque;
+    .containerNavbar {
+         display:flex ;
+         justify-content: space-between;
+         
+         align-items: center;
+         background-color: bisque;
+        padding: 30px 70px 30px 10px;
+         }
 
-}
+    .containerUl{
+        display: flex;
+        gap: 40px;
+    }
+
+    .itemNav{
+        list-style: none;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+
+    }
+    .itemNav:hover{
+        cursor: pointer;
+        color: darkgray;
+    }

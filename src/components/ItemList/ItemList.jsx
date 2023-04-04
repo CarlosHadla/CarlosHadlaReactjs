@@ -1,11 +1,10 @@
 
 
-export const ItemList = () => {
-
-
-
+export const ItemList = ({greeting}) => {
     
   return (
-    <div>ItemList</div>
+    <div>
+      <h1>{greeting}</h1>
+    </div>
   )
 }

@@ -1,19 +1,22 @@
-import { display } from "@mui/system"
-import CartWidget from "../CartWidget/CartWidget"
-import styles from "./Navbar.module.css"
+
+import CartWidgetConteiner from "../CartWidget/CartWidgetConteiner"
+import styles from"./Navbar.module.css"
 
 
 export const Navbar = ()=>{
+
+    
+
     return (
         <div className={styles.containerNavbar}>
            <h1>DonGatoBooks</h1>
-            <ul>
-                <li>Todos</li>
-                <li>Terror</li>
-                <li>Fantasia</li>
+            <ul className={styles.containerUl}>
+                <li className={styles.itemNav} >Todos</li>
+                <li className={styles.itemNav}>Terror</li>
+                <li className={styles.itemNav}>Fantasia</li>
             </ul>
 
-            <CartWidget/>
+            <CartWidgetConteiner/>
         </div>
 
     )
