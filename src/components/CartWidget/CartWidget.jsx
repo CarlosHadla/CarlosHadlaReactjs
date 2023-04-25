@@ -15,3 +15,4 @@ const CartWidget = ({StyledBadge}) =>{
   }
   
   export default CartWidget;
+

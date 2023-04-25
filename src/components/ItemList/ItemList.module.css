@@ -1,1 +1,14 @@
 
+
+.listaItems{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 1rem ;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.text{
+    text-align: center;
+    margin: auto;
+}
