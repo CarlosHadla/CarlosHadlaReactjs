@@ -53,7 +53,7 @@ export const products = [
     price:10000,
     stock:15,
     description:"is a psychological horror novel by Stephen King about a successful author named Paul Sheldon who is rescued by his number one fan, Annie Wilkes, after a car accident leaves him injured and stranded. Annie takes Paul to her remote cabin to nurse him back to health, but as he begins to recover, he realizes that Annie is not just a devoted fan, but an unhinged and dangerous woman who will go to any lengths to keep him writing the Misery series of novels featuring her favorite character. Trapped and at the mercy of his captor, Paul must find a way to escape before it's too late. The novel is a chilling exploration of obsession and the dark side of fandom, and is considered one of King's most terrifying works.",
-    category:"Terror",
+    category:"terror",
     img:"https://res.cloudinary.com/dsyfddnjd/image/upload/v1682411754/libro-1500360302_a6l2q2.jpg"
 }, 
 {
