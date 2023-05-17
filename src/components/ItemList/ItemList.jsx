@@ -13,7 +13,7 @@ export const ItemList = ({ items }) => {
   return (
     <div className={styles.listaItems}>
       {items.map((e) => {
-        const { title, price, id, description, img } = e;
+        const { title, price, id, img } = e;
         return (
           <Card sx={{ maxWidth: 340, heigth: 700 }} key={id}>
             <CardMedia
@@ -33,7 +33,7 @@ export const ItemList = ({ items }) => {
             </CardContent>
             <CardActions>
               <Link to={`/itemDetail/${id}`}>
-                <Button size="large">Learn More</Button>
+                <Button variant="contained" color="secondary" size="large">Learn More</Button>
               </Link>
             </CardActions>
           </Card>

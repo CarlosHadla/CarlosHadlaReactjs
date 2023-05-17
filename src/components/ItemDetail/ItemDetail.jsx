@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ItemDetail.module.css";
+import CounterContainer from "../Counter/CounterContainer";
 
 const ItemDetail = ({ product }) => {
   return (
@@ -9,7 +10,11 @@ const ItemDetail = ({ product }) => {
         <h1 className={styles.title}>{product.title}</h1>
         <p className={styles.text}>{product.description}</p>
         <h4>{`price: $${product.price}`}</h4>
-        <button className={styles.button}>Purchase</button>
+        <h4>{`stock: ${product.stock}`}</h4>
+
+        <div className={styles.counter}>
+        <CounterContainer stock={product.stock}/>
+        </div>
       </div>
     </div>
   );

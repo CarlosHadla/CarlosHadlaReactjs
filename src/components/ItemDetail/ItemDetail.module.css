@@ -4,5 +4,10 @@
     grid-template-columns: 1fr 3fr;
     align-items: center;
     gap: 2rem;
-    margin: auto;
+    margin: 1rem 3rem;
+}
+
+.counter{
+    display: flex;
+    gap: 1rem;
 }

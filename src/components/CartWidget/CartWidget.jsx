@@ -1,18 +1,19 @@
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import IconButton from "@mui/material/IconButton";
+import { Link } from "react-router-dom";
 
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import IconButton from '@mui/material/IconButton';
-
-const CartWidget = ({StyledBadge}) =>{
-    return (
+const CartWidget = ({ StyledBadge }) => {
+  return (
+    <Link to="/cart">
       <div>
-      <IconButton aria-label="cart">
-        <StyledBadge badgeContent={5} color="secondary">
-          <ShoppingCartIcon />
-        </StyledBadge>
-      </IconButton>
+        <IconButton aria-label="cart">
+          <StyledBadge badgeContent={5} color="secondary">
+            <ShoppingCartIcon />
+          </StyledBadge>
+        </IconButton>
       </div>
-    );
-  }
-  
-  export default CartWidget;
+    </Link>
+  );
+};
 
+export default CartWidget;
