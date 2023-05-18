@@ -9,7 +9,7 @@ const CartContextProvider = ({ children }) => {
     if (repetidoEnCarrito(product.id)) {
       let newCart = cart.map((e) => {
         if (e.id === product.id) {
-          return { ...e, quantity: e.quantity + product.quantity };
+          return { ...e, quantity: product.quantity };
         } else {
           return e;
         }
@@ -28,6 +28,13 @@ const CartContextProvider = ({ children }) => {
     //filtrado por "no es igual al actual."
     setCart(cart.filter((e) => e.id !== id));
   };
+
+
+  const quantityPorId = (id)=>{
+    //busca el elemento quantity y si lo tiene devuelve la cantidad
+    let product = cart.find( e => e.id === id)
+    return product?.quantity
+  }
 
   const precioTotal = ()=>{
     let total=cart.reduce((acumulador, elemento)=>{
@@ -48,7 +55,7 @@ const CartContextProvider = ({ children }) => {
     return total;
   }
 
-  let data = { cart, agregarAlCarrito, limpiarCarrito, eliminarPorId, precioTotal, cantidadTotal };
+  let data = { cart, agregarAlCarrito, limpiarCarrito, eliminarPorId, precioTotal, cantidadTotal, quantityPorId};
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
 

@@ -8,7 +8,7 @@ import { CartContext } from "../../context/CartContext";
 
 const ItemDetailConteiner = () => {
   const [product, setProduct] = useState({});
-  const { agregarAlCarrito } = useContext(CartContext);
+  const { agregarAlCarrito, quantityPorId } = useContext(CartContext);
   const { id } = useParams();
 
   useEffect(() => {
@@ -22,12 +22,15 @@ const ItemDetailConteiner = () => {
       ...product,
       quantity: quantity,
     };
-
     agregarAlCarrito(data);
   };
+
+  let totalQuantity = quantityPorId(product.id)
+
+
   return (
     <div>
-      <ItemDetail product={product} onAdd={onAdd} />
+      <ItemDetail product={product} onAdd={onAdd} totalQuantity={totalQuantity}/>
     </div>
   );
 };

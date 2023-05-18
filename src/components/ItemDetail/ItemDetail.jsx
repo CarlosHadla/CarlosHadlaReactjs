@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ItemDetail.module.css";
 import CounterContainer from "../Counter/CounterContainer";
 
-const ItemDetail = ({ product , onAdd }) => {
+const ItemDetail = ({ product , onAdd, totalQuantity }) => {
   return (
     <div className={styles.conteiner}>
       <img src={product.img} alt="portada" />
@@ -13,7 +13,7 @@ const ItemDetail = ({ product , onAdd }) => {
         <h4>{`stock: ${product.stock}`}</h4>
 
         <div className={styles.counter}>
-        <CounterContainer stock={product.stock} onAdd={onAdd}/>
+        <CounterContainer stock={product.stock} onAdd={onAdd} i={totalQuantity}/>
         </div>
       </div>
     </div>
