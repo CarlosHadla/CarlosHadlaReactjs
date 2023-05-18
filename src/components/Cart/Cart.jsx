@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
-import React from "react";
+import { Link } from "react-router-dom";
 
-const Cart = ({ cart, limpiarCarrito, eliminarPorId, total}) => {
+const Cart = ({ cart, eliminarPorId, total, opcionesEliminarCarro }) => {
   return (
     <div
       style={{
@@ -9,10 +9,9 @@ const Cart = ({ cart, limpiarCarrito, eliminarPorId, total}) => {
         flexDirection: `column`,
         alignItems: `center`,
         gap: `1rem`,
+        marginTop: `1rem`,
       }}
     >
-      <h1>hola carro</h1>
-
       {cart.map((e) => {
         return (
           <div
@@ -39,15 +38,31 @@ const Cart = ({ cart, limpiarCarrito, eliminarPorId, total}) => {
           </div>
         );
       })}
-      <h2>El total a pagar es ${total}</h2>
-      <div style={{ display: `flex`, gap: `1rem` }}>
-        <Button onClick={limpiarCarrito} variant="contained" color="secondary">
-          Delete
-        </Button>
-        <Button variant="contained" color="secondary">
-          Purchase
-        </Button>
-      </div>
+
+      {cart.length !== 0 ? (
+        <>
+          <h2>El total a pagar es ${total}</h2>
+
+          <div style={{ display: `flex`, gap: `1rem` }}>
+            <Button
+              onClick={opcionesEliminarCarro}
+              variant="contained"
+              color="secondary"
+            >
+              Delete
+            </Button>
+            <Button variant="contained" color="secondary">
+              Purchase
+            </Button>
+          </div>
+        </>
+      ) : (
+        <Link to="/">
+          <Button variant="contained" color="secondary">
+            Agrega elementos al carrito para continuar
+          </Button>
+        </Link>
+      )}
     </div>
   );
 };

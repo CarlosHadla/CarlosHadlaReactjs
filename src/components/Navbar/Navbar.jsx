@@ -16,6 +16,7 @@ export const Navbar = () => {
           <Link to="category/fantasy"className={styles.itemNav}>Fantasy</Link>
         </ul>
 
+
         <CartWidgetConteiner />
       </div>
       <Outlet />

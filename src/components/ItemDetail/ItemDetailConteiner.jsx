@@ -3,6 +3,7 @@ import ItemDetail from "./ItemDetail";
 import { products } from "../../productsMock";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import Swal from 'sweetalert2'
 
 
 
@@ -22,10 +23,20 @@ const ItemDetailConteiner = () => {
       ...product,
       quantity: quantity,
     };
+
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Producto agregado',
+      showConfirmButton: false,
+      timer: 1000
+    })
     agregarAlCarrito(data);
   };
 
   let totalQuantity = quantityPorId(product.id)
+
+   
 
 
   return (
