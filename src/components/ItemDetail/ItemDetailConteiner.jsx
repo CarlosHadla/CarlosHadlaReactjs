@@ -5,6 +5,8 @@ import { CartContext } from "../../context/CartContext";
 import Swal from 'sweetalert2'
 import { dataBase } from "../../firebaseConfig";
 import { collection, doc, getDoc } from "firebase/firestore";
+import { PacmanLoader } from "react-spinners";
+
 
 
 const ItemDetailConteiner = () => {
@@ -46,8 +48,22 @@ const ItemDetailConteiner = () => {
 
   return (
     <div>
-      <ItemDetail product={product} onAdd={onAdd} totalQuantity={totalQuantity}/>
+      {!product.img? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "3rem",
+          }}
+        >
+          <PacmanLoader color="#a020f0" />
+        </div>
+      ) : (
+        <ItemDetail product={product} onAdd={onAdd} totalQuantity={totalQuantity}/>
+      )}
     </div>
+
   );
 };
 

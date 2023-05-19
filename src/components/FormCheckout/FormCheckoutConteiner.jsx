@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 
 const FormCheckoutContainer = () => {
-  const { cart, precioTotal } = useContext(CartContext);
+  const { cart, precioTotal, limpiarCarrito } = useContext(CartContext);
   const [idOrder, setIdOrder] = useState(null);
   const chechOutFn = (data) => {
     let dataOrder = {
@@ -19,10 +19,13 @@ const FormCheckoutContainer = () => {
       total: precioTotal(),
     };
     const ordersCollection = collection(dataBase, "orders");
-    addDoc(ordersCollection, dataOrder).then((respuesta) =>
-      setIdOrder(respuesta.id)
-    );
+    addDoc(ordersCollection, dataOrder).then((respuesta) => setIdOrder(respuesta.id));
 
+    cart.map((product) => 
+        updateDoc(doc(dataBase,"products",product.id  ), {stock: product.stock - product.quantity})
+    )
+    
+    limpiarCarrito();
 
   };
 
