@@ -33,7 +33,7 @@ export const products = [
         title: "Lord of the Mysteries",
         price:14000,
         stock:15,
-        description:"is a web novel by Cuttlefish That Loves Diving, a fantasy and mystery story about Klein Moretti, who wakes up in a dangerous and mysterious world full of secrets. Klein discovers a mysterious organization called Tarot that controls much of the city from the shadows. To uncover the truth behind his situation, Klein joins secret groups and societies, facing supernatural dangers and dark secrets about the world and its inhabitants. The novel is full of action, intrigue, and mystery, and appeals to fans of the fantasy and supernatural mystery genres.",
+        description:"A fantasy and mystery story about Klein Moretti, who wakes up in a dangerous and mysterious world full of secrets. Klein discovers a mysterious organization called Tarot that controls much of the city from the shadows. To uncover the truth behind his situation, Klein joins secret groups and societies, facing supernatural dangers and dark secrets about the world and its inhabitants. The novel is full of action, intrigue, and mystery, and appeals to fans of the fantasy and supernatural mystery genres.",
         category:"fantasy",
         img:"https://res.cloudinary.com/dsyfddnjd/image/upload/v1682412766/58826678_bi6zej.jpg"
     },
