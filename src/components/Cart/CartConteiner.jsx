@@ -2,11 +2,14 @@ import React, { useContext } from 'react'
 import Cart from './Cart'
 import { CartContext } from '../../context/CartContext'
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 
 const CartConteiner = () => {
   const {cart, limpiarCarrito, eliminarPorId, precioTotal} = useContext(CartContext)
   let total = precioTotal()
+
+  const navigate = useNavigate()
 
   const opcionesEliminarCarro = () =>{
     Swal.fire({
@@ -24,7 +27,7 @@ const CartConteiner = () => {
   }
   return (
     <div>
-        <Cart cart={cart} eliminarPorId={eliminarPorId} total={total} opcionesEliminarCarro={opcionesEliminarCarro}/>
+        <Cart cart={cart} eliminarPorId={eliminarPorId} total={total} opcionesEliminarCarro={opcionesEliminarCarro} navigate={navigate}/>
     </div>
   )
 }

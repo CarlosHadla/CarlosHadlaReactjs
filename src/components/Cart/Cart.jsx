@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const Cart = ({ cart, eliminarPorId, total, opcionesEliminarCarro }) => {
+const Cart = ({ cart, eliminarPorId, total, opcionesEliminarCarro, navigate }) => {
   return (
     <div
       style={{
@@ -49,10 +49,10 @@ const Cart = ({ cart, eliminarPorId, total, opcionesEliminarCarro }) => {
               variant="contained"
               color="secondary"
             >
-              Delete
+              Eliminar
             </Button>
-            <Button variant="contained" color="secondary">
-              Purchase
+            <Button variant="contained" color="secondary" onClick={()=>navigate("/checkout")}>
+              Continuar con la compra
             </Button>
           </div>
         </>

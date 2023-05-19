@@ -19,10 +19,7 @@ const ItemDetailConteiner = () => {
       setProduct({
         ...respuesta.data(),
         id:respuesta.id
-      }))
-
-    // let finded = products.find((e) => e.id === +id);
-    // setProduct(finded);
+      })).catch(error=>console.log(error))
   }, [id]);
 
   const onAdd = (quantity) => {
